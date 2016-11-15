@@ -820,7 +820,7 @@ namespace Westwind.Globalization
         /// Returned as full ResourceItem objects
         /// </summary>
         /// <param name="resourceId">The resource Id to return for</param>
-        /// <param name="resourceSet">Resourceset to look in</param>
+        /// <param name="resourceSet">ResourceSet to look in</param>
         /// <param name="forAllResourceSetLocales">When true returns empty entries for missing resources of locales in this resource set</param>
         /// <returns>List of resource items or null</returns>
         public virtual IEnumerable<ResourceItem> GetResourceItems(string resourceId, string resourceSet, bool forAllResourceSetLocales = false)
@@ -1064,7 +1064,7 @@ namespace Westwind.Globalization
                 DbParameter TextFileParm = data.CreateParameter("@TextFile", resource.TextFile);
 
                 string Sql = "insert into " + Configuration.ResourceTableName +
-                             " (ResourceId,Value,LocaleId,Type,Resourceset,BinFile,TextFile,Filename,Comment,ValueType,Updated) Values (@ResourceID,@Value,@LocaleId,@Type,@ResourceSet,@BinFile,@TextFile,@FileName,@Comment,@ValueType,@Updated)";
+                             " (ResourceId,Value,LocaleId,Type,ResourceSet,BinFile,TextFile,FileName,Comment,ValueType,Updated) Values (@ResourceId,@Value,@LocaleId,@Type,@ResourceSet,@BinFile,@TextFile,@FileName,@Comment,@ValueType,@Updated)";
                 if (data.ExecuteNonQuery(Sql,
                     data.CreateParameter("@ResourceId", resource.ResourceId),
                     data.CreateParameter("@Value", resource.Value),
@@ -1166,7 +1166,7 @@ namespace Westwind.Globalization
                 DbParameter TextFileParm = data.CreateParameter("@TextFile", TextFile);
 
                 string Sql = "insert into " + Configuration.ResourceTableName +
-                             " (ResourceId,Value,LocaleId,Type,Resourceset,BinFile,TextFile,Filename,Comment,ValueType,Updated) Values (@ResourceID,@Value,@LocaleId,@Type,@ResourceSet,@BinFile,@TextFile,@FileName,@Comment,@ValueType,@Updated)";
+                             " (ResourceId,Value,LocaleId,Type,ResourceSet,BinFile,TextFile,FileName,Comment,ValueType,Updated) Values (@ResourceId,@Value,@LocaleId,@Type,@ResourceSet,@BinFile,@TextFile,@FileName,@Comment,@ValueType,@Updated)";
                 if (data.ExecuteNonQuery(Sql,
                     data.CreateParameter("@ResourceId", resourceId),
                     data.CreateParameter("@Value", value),

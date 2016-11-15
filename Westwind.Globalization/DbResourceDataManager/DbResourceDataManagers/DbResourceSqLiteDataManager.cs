@@ -116,7 +116,7 @@ namespace Westwind.Globalization
 , [Type] nvarchar(512) DEFAULT '' NULL
 , [BinFile] image NULL
 , [TextFile] ntext NULL
-, [Filename] nvarchar(128) NULL
+, [FileName] nvarchar(128) NULL
 , [Comment] nvarchar(512) NULL
 , [ValueType] unsigned integer(2) DEFAULT 0
 , [Updated] datetime NULL
